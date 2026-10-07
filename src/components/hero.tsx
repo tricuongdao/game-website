@@ -176,14 +176,10 @@ export const Hero = () => {
           />
         </div>
 
-        <h1 className="special-font hero-heading text-blue-75 absolute right-5 bottom-5 z-40">
-          V<b>a</b>lorant
-        </h1>
-
         <div className="absolute top-0 left-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              Tactic<b>a</b>l
+              V<b>a</b>lorant
             </h1>
 
             <p className="font-robert-regular mb-5 max-w-64 text-blue-100">
@@ -202,9 +198,17 @@ export const Hero = () => {
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute right-5 bottom-5 text-black">
-        V<b>a</b>lorant
-      </h1>
+      {/*
+        Mirrors the heading inside #video-frame at the same coordinates, so the
+        clip-path unfurl reveals the black copy exactly behind the cream one.
+      */}
+      <div className="pointer-events-none absolute top-0 left-0 size-full">
+        <div className="mt-24 px-5 sm:px-10">
+          <h1 className="special-font hero-heading text-black">
+            V<b>a</b>lorant
+          </h1>
+        </div>
+      </div>
     </section>
   );
 };

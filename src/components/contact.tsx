@@ -45,12 +45,17 @@ export const Contact = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center text-center">
+        {/*
+          z-10 puts the copy above the absolutely-positioned art panels. Without
+          it the panels paint over the heading (positioned boxes beat static
+          ones) and chop words off at both ends on tablet widths.
+        */}
+        <div className="relative z-10 flex flex-col items-center text-center">
           <p className="font-general text-[10px] uppercase">
             Join the Protocol
           </p>
 
-          <p className="special-font font-zentry mt-10 w-full text-5xl leading-[0.9] md:text-[6rem]">
+          <p className="special-font font-zentry mt-10 w-full text-[clamp(3rem,8vw,6rem)] leading-[0.9] [text-shadow:0_2px_20px_rgba(0,0,0,0.55)]">
             Let's def<b>y</b> the
             <br /> limits of play <br /> t<b>o</b>gether
           </p>
