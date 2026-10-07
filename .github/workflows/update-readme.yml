@@ -44,23 +44,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Regenerate README sections
-        run: node scripts/update-readme.mjs
+      # Formatting is an explicit step so a missing formatter can never silently
+      # produce output that differs from the committed README.
+      - name: Format README
+        run: npx --no-install prettier --write README.md
 
       - name: Fail if README is stale
         run: |
-          if ! git diff --quiet -- README.md; then
+          if ! npm run --silent readme:check; then
+            echo ""
             echo "::error file=README.md::README.md is out of date."
             echo ""
             echo "The dependency list or folder structure changed but README.md was"
-            echo "not regenerated. Fix it by running:"
+            echo "not regenerated. Fix it locally with:"
             echo ""
             echo "    npm run readme:update"
+            echo "    npm run format:fix"
             echo ""
             echo "then commit the updated README.md."
             echo ""
             echo "--- expected changes ---"
+            npm run --silent readme:update >/dev/null
             git --no-pager diff -- README.md
             exit 1
           fi
-          echo "README.md is up to date."

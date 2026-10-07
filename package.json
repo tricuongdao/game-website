@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "verify:media": "node scripts/verify-media.mjs",
-    "readme:update": "node scripts/update-readme.mjs"
+    "readme:update": "node scripts/update-readme.mjs",
+    "readme:check": "node scripts/update-readme.mjs --check"
   },
   "author": {
     "name": "Vinny Dao",
