@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: VALORANT media attribution
+    url: https://github.com/tricuongdao/game-website/blob/main/MEDIA-PROVENANCE.md
+    about: Where every video, image and icon in this project comes from.
+  - name: Original template
+    url: https://github.com/sanidhyy/game-website
+    about: The Zentry-style 3D animated template this project is built on.

@@ -1,0 +1,22 @@
+# Normalise line endings so the repo is consistent across platforms and
+# Prettier/ESLint behave the same for everyone.
+* text=auto eol=lf
+
+# Windows-only helpers should keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets - never touch these
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.mp3 binary
+*.woff2 binary
+*.lockb binary
+
+# Keep lockfile diffs out of language stats
+package-lock.json linguist-generated=true
+bun.lockb linguist-generated=true
