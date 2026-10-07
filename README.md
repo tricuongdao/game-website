@@ -116,6 +116,7 @@ npm run verify:media   # in another
 ## 📁 Project structure
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 game-website/
   |- public/
@@ -154,11 +155,13 @@ game-website/
   |- tsconfig.node.json
   |- vite.config.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 ## 📦 Dependencies
 
 <!--- DEPENDENCIES_START --->
+
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
 - [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.1.18

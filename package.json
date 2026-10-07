@@ -12,7 +12,8 @@
     "format:fix": "prettier --write .",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
-    "verify:media": "node scripts/verify-media.mjs"
+    "verify:media": "node scripts/verify-media.mjs",
+    "readme:update": "node scripts/update-readme.mjs"
   },
   "author": {
     "name": "Vinny Dao",
