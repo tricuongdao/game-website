@@ -116,11 +116,77 @@ npm run verify:media   # in another
 ## 📁 Project structure
 
 <!--- FOLDER_STRUCTURE_START --->
+```bash
+game-website/
+  |- public/
+  |- src/
+    |-- components/
+      |--- about.tsx
+      |--- animated-title.tsx
+      |--- button.tsx
+      |--- contact.tsx
+      |--- features.tsx
+      |--- footer.tsx
+      |--- hero.tsx
+      |--- navbar.tsx
+      |--- rounded-corners.tsx
+      |--- story.tsx
+    |-- constants/
+      |--- index.ts
+    |-- lib/
+      |--- utils.ts
+    |-- app.tsx
+    |-- index.css
+    |-- main.tsx
+    |-- vite-env.d.ts
+  |- .gitattributes
+  |- .gitignore
+  |- .prettierignore
+  |- .prettierrc
+  |- eslint.config.js
+  |- index.html
+  |- netlify.toml
+  |- package-lock.json
+  |- package.json
+  |- postcss.config.mjs
+  |- tsconfig.app.json
+  |- tsconfig.json
+  |- tsconfig.node.json
+  |- vite.config.ts
+```
 <!--- FOLDER_STRUCTURE_END --->
 
 ## 📦 Dependencies
 
 <!--- DEPENDENCIES_START --->
+- [@eslint/js](https://www.npmjs.com/package/@eslint/js): ^10.0.1
+- [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.2
+- [@tailwindcss/postcss](https://www.npmjs.com/package/@tailwindcss/postcss): ^4.1.18
+- [@tailwindcss/vite](https://www.npmjs.com/package/@tailwindcss/vite): ^4.1.18
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.13
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
+- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^6.0.1
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [eslint](https://www.npmjs.com/package/eslint): ^10.0.0
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): ^7.37.2
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^7.0.1
+- [eslint-plugin-react-refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh): ^0.5.0
+- [globals](https://www.npmjs.com/package/globals): ^17.3.0
+- [gsap](https://www.npmjs.com/package/gsap): ^3.14.2
+- [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
+- [prettier](https://www.npmjs.com/package/prettier): ^3.8.1
+- [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.0
+- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-icons](https://www.npmjs.com/package/react-icons): ^5.3.0
+- [react-use](https://www.npmjs.com/package/react-use): ^17.5.1
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.4.0
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.1.18
+- [typescript](https://www.npmjs.com/package/typescript): ~7.0.2
+- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): ^8.54.0
+- [vite](https://www.npmjs.com/package/vite): ^8.0.0
+
 <!--- DEPENDENCIES_END --->
 
 ## ☁️ Deploying
