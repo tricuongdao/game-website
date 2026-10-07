@@ -203,14 +203,3 @@ Any static host works — build with `npm run build` and serve `dist/`:
 | Build command     | `npm run build` |
 | Publish directory | `dist`          |
 | Node version      | 20 or newer     |
-
-## 🙏 Credits
-
-Built on the original
-[Zentry-style 3D animated template](https://github.com/sanidhyy/game-website) by
-[Sanidhya Kumar Verma](https://github.com/sanidhyy), used under the MIT License
-and rethemed for VALORANT.
-
-## 📄 License
-
-[MIT](LICENSE) © Sanidhya Kumar Verma and contributors.
