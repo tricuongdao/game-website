@@ -164,12 +164,38 @@ const send = (method, params = {}) => {
   return new Promise((resolve, reject) => pending.set(i, { resolve, reject }));
 };
 
-const { targetInfos } = await send("Target.getTargets");
-const page = targetInfos.find((t) => t.type === "page");
-({ sessionId } = await send("Target.attachToTarget", {
-  targetId: page.targetId,
-  flatten: true,
-}));
+/** Browser-level commands must not carry a page sessionId. */
+const sendBrowser = (method, params = {}) => {
+  const i = ++id;
+  socket.send(JSON.stringify({ id: i, method, params }));
+  return new Promise((resolve, reject) => pending.set(i, { resolve, reject }));
+};
+
+/**
+ * Attach to a page target, creating one if Chrome has not reported any yet.
+ * `Target.getTargets` must be issued at browser level: passing the stale page
+ * sessionId makes the browser return an empty list and the lookup blows up.
+ */
+async function attachToPage() {
+  for (let attempt = 0; attempt < 40; attempt++) {
+    const { targetInfos } = await sendBrowser("Target.getTargets");
+    const existing = targetInfos.find((t) => t.type === "page");
+    if (existing) {
+      const { sessionId: sid } = await sendBrowser("Target.attachToTarget", {
+        targetId: existing.targetId,
+        flatten: true,
+      });
+      return sid;
+    }
+    if (attempt === 5) {
+      await sendBrowser("Target.createTarget", { url: "about:blank" });
+    }
+    await sleep(250);
+  }
+  throw new Error("Chrome never exposed a page target");
+}
+
+sessionId = await attachToPage();
 
 await send("Page.enable");
 await send("Runtime.enable");
